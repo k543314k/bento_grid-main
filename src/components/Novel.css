@@ -1,0 +1,142 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 24px;
+  height: 745px;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.div9, .div10, .div11, .div12, .div13, .div14, .div15, .div16, .div17 {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  overflow: visible;
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+
+.div17:hover {
+  transform: scale(1.05); /* 讓 Grid 容器放大 */
+}
+
+/* 圖片包裹容器樣式 */
+.div9 .image-container, .div10 .image-container, .div11 .image-container, .div12 .image-container,
+.div13 .image-container, .div14 .image-container, .div15 .image-container, .div16 .image-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.div9:hover .image-container, .div10:hover .image-container, .div11:hover .image-container, .div12:hover .image-container,
+.div13:hover .image-container, .div14:hover .image-container, .div15:hover .image-container, .div16:hover .image-container {
+  transform: scale(1.05); /* 圖片包裹容器放大 */
+}
+
+
+
+.div9 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+}
+
+.div10 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 3;
+}
+
+.div11 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 5;
+}
+
+.div12 {
+  grid-column: span 3 / span 3;
+  grid-row: span 2 / span 2;
+  grid-column-start: 7;
+}
+
+.div13 {
+  grid-column: span 3 / span 3;
+  grid-row: span 2 / span 2;
+  grid-column-start: 10;
+}
+
+.div14 {
+  grid-column: span 4 / span 4;
+  grid-row: span 4 / span 4;
+  grid-row-start: 3;
+  align-items: start;
+}
+
+.div15 {
+  grid-column: span 3 / span 3;
+  grid-row: span 4 / span 4;
+  grid-column-start: 5;
+  grid-row-start: 3;
+}
+
+.div16 {
+  grid-column: span 3 / span 3;
+  grid-row: span 4 / span 4;
+  grid-column-start: 8;
+  grid-row-start: 3;
+}
+
+.div17 {
+  grid-column: span 2 / span 2;
+  grid-row: span 4 / span 4;
+  grid-column-start: 11;
+  grid-row-start: 3;
+  font-size: 18px;
+  line-height: 2; 
+  justify-content: flex-start;
+  align-items: center; 
+  text-align: left;
+  padding: 0 5px;
+  color: white;
+}
+
+img {
+  /* max-width: 100%;
+  max-height: 100%; */
+  width: 100%; /* 讓圖片寬度填滿父容器 */
+  height: auto;
+  object-fit: cover; /* 確保圖片保持比例 */
+  
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}

@@ -1,0 +1,149 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 24px;
+  height: 745px;
+  padding: 24px;
+}
+
+.div18, .div20, .div21, .div22, .div23, .div24, .div25, .div26, .div27 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 30px;
+  overflow: hidden; /* 確保內容不超出邊界 */
+  transition: transform 0.3s ease; /* 平滑的放大效果 */
+  transform-origin: center; /* 設定放大的基點 */
+}
+
+.div18:hover, .div20:hover, .div21:hover, .div22:hover, .div23:hover, .div24:hover, .div25:hover, .div26:hover, .div27:hover {
+  transform: scale(1.05); /* 整個區塊放大 */
+  z-index: 10; /* 提高層級，避免被其他元素遮蓋 */
+}
+
+.div18 {
+  grid-column: span 5 / span 5;
+    grid-row: span 4 / span 4;
+}
+
+.div20 {
+  grid-column: span 7 / span 7;
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-row-start: 1;
+}
+
+.div21 {
+  grid-column: span 2 / span 2;
+    grid-row: span 2 / span 2;
+    grid-column-start: 6;
+    grid-row-start: 3;
+}
+
+.div22 {
+  grid-column: span 2 / span 2;
+  grid-row: span 2 / span 2;
+  grid-column-start: 8;
+  grid-row-start: 3;
+}
+
+.div23 {
+  grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+    grid-column-start: 10;
+    grid-row-start: 3;
+}
+
+.div24 {
+  grid-column: span 3 / span 3;
+  grid-row: span 2 / span 2;
+  grid-column-start: 1;
+  grid-row-start: 5;
+}
+
+.div25 {
+  grid-column: span 3 / span 3;
+  grid-row: span 2 / span 2;
+  grid-column-start: 4;
+  grid-row-start: 5;
+}
+
+.div26 {
+  grid-column: span 3 / span 3;
+  grid-row: span 2 / span 2;
+  grid-column-start: 7;
+  grid-row-start: 5;
+}
+
+.div27 {
+  grid-column: span 3 / span 3;
+    grid-row: span 2 / span 2;
+    grid-column-start: 10;
+    grid-row-start: 5;
+
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+img {
+  width: 100%; /* 寬度填滿父容器 */
+  height: 100%; /* 高度填滿父容器 */
+  object-fit: cover; /* 保持比例並裁剪多餘部分 */
+  position: relative; /* 相對定位圖片 */
+  z-index: 1; /* 設定圖片層級在文字下方 */
+  max-width: none;  /* 確保圖片可以超過容器的寬度 */
+  max-height: none; 
+}
+
+.grid-title {
+  position: absolute; /* 絕對定位文字 */
+  top: 10px; /* 距離容器頂部 */
+  left: 10px; /* 距離容器左側 */
+  font-size: 18px; /* 文字大小 */
+  font-weight: bold; /* 粗體字 */
+  color: white; /* 文字顏色 */
+  z-index: 2; /* 提高層級，顯示在圖片上方 */
+  background-color: rgba(0, 0, 0, 0.6); /* 半透明背景以提升對比 */
+  padding: 5px 10px; /* 增加內距 */
+  border-radius: 5px; /* 添加圓角 */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
